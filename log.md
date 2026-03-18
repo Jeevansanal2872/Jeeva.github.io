@@ -15,3 +15,7 @@ Daily notes on web development, design, and programming.
 ## 2026-03-18
 - JavaScript async/await vs Promise.then chaining
 
+
+## 2026-03-18
+- WCAG 2.1 AA contrast ratios and keyboard navigation
+
