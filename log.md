@@ -23,3 +23,7 @@ Daily notes on web development, design, and programming.
 ## 2026-03-18
 - Color theory - complementary and split-complementary
 
+
+## 2026-03-19
+- Typography scale with modular ratios (1.25 / 1.333)
+
