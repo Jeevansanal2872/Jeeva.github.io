@@ -27,3 +27,7 @@ Daily notes on web development, design, and programming.
 ## 2026-03-19
 - Typography scale with modular ratios (1.25 / 1.333)
 
+
+## 2026-03-19
+- Git interactive rebase for cleaning commit history
+
