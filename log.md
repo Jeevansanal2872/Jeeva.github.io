@@ -31,3 +31,7 @@ Daily notes on web development, design, and programming.
 ## 2026-03-19
 - Git interactive rebase for cleaning commit history
 
+
+## 2026-03-19
+- REST API naming conventions and response codes
+
