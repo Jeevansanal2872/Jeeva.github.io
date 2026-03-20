@@ -43,3 +43,7 @@ Daily notes on web development, design, and programming.
 ## 2026-03-20
 - Explored CSS Grid subgrid for nested component layouts
 
+
+## 2026-03-20
+- Figma auto-layout constraints and responsive frames
+
