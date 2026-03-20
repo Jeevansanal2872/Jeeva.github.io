@@ -39,3 +39,7 @@ Daily notes on web development, design, and programming.
 ## 2026-03-19
 - Python list comprehensions vs generator expressions
 
+
+## 2026-03-20
+- Explored CSS Grid subgrid for nested component layouts
+
