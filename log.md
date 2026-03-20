@@ -47,3 +47,7 @@ Daily notes on web development, design, and programming.
 ## 2026-03-20
 - Figma auto-layout constraints and responsive frames
 
+
+## 2026-03-20
+- React useEffect cleanup patterns for subscriptions
+
