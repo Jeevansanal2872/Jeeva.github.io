@@ -51,3 +51,7 @@ Daily notes on web development, design, and programming.
 ## 2026-03-20
 - React useEffect cleanup patterns for subscriptions
 
+
+## 2026-03-25
+- JavaScript async/await vs Promise.then chaining
+
