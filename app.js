@@ -1,4 +1,4 @@
-﻿// Data Provider
+// Data Provider
 const DATA = {
     roles: [
         "Graphic Designer @ IEEE SPS KC",
@@ -300,3 +300,157 @@ async function syncLinkedInDP() {
         console.warn("LinkedIn DP live fetch fallback:", error);
     }
 }
+
+// ============================================================
+// DYNAMIC POSTER AUTO-DISCOVERY & SCROLLER
+// ============================================================
+
+async function loadPosters() {
+    let posterUrls = [...DATA.defaultPosters];
+
+    // Real-time GitHub API Asset Auto-Discovery
+    try {
+        const repoApiUrl = "https://api.github.com/repos/Jeevansanal2872/Designer-portfolio.github.io/contents/posters";
+        const response = await fetch(repoApiUrl, {
+            headers: { Accept: "application/vnd.github.v3+json" }
+        });
+        
+        if (response.ok) {
+            const files = await response.json();
+            if (Array.isArray(files) && files.length > 0) {
+                const imgFiles = files
+                    .filter(f => /\.(png|jpe?g|webp|gif|svg)$/i.test(f.name))
+                    .sort((a, b) => {
+                        const numA = parseInt(a.name) || 0;
+                        const numB = parseInt(b.name) || 0;
+                        return (numA && numB) ? numA - numB : a.name.localeCompare(b.name);
+                    });
+                if (imgFiles.length > 0) {
+                    posterUrls = imgFiles.map(f => `posters/${f.name}`);
+                }
+            }
+        }
+    } catch (err) {
+        console.warn("GitHub API poster fetch using local list fallback:", err);
+    }
+
+    renderPostersList(posterUrls);
+}
+
+function renderPostersList(urls) {
+    const postersContainer = document.getElementById('posters-container');
+    if (!postersContainer) return;
+
+    const posterItems = urls.map((url, idx) => `
+        <div class="flex-none w-[240px] sm:w-[280px] md:w-[320px] aspect-square border-4 border-black dark:border-white bg-white dark:bg-[#171717] brutal-shadow overflow-hidden group cursor-pointer">
+            <img src="${url}" alt="Poster ${idx + 1}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 select-none"
+                 draggable="false"
+                 loading="lazy"
+                 onerror="this.src='https://placehold.co/800x800/000/fff?text=POSTER+${idx + 1}'">
+        </div>
+    `);
+
+    // Duplicate 4x for smooth infinite wrap
+    postersContainer.innerHTML = [...posterItems, ...posterItems, ...posterItems, ...posterItems].join('');
+    setupPosterScroll(urls.length);
+    if (window.lucide) lucide.createIcons();
+}
+
+function setupPosterScroll(itemCount) {
+    const scroller = document.getElementById('posters-scroller');
+    if (!scroller) return;
+
+    let isHovered = false;
+    let isDragging = false;
+    let startX, scrollLeft;
+
+    const itemWidth = window.innerWidth < 640 ? 240 : 300;
+    const gap = 24;
+    const count = itemCount || 20;
+    const singleSetWidth = count * (itemWidth + gap);
+
+    scroller.scrollLeft = singleSetWidth;
+
+    scroller.addEventListener('mouseenter', () => isHovered = true);
+    scroller.addEventListener('mouseleave', () => {
+        isHovered = false;
+        isDragging = false;
+    });
+
+    scroller.addEventListener('touchstart', () => isHovered = true, { passive: true });
+    scroller.addEventListener('touchend', () => isHovered = false, { passive: true });
+
+    scroller.addEventListener('mousedown', (e) => {
+        isDragging = true;
+        startX = e.pageX - scroller.offsetLeft;
+        scrollLeft = scroller.scrollLeft;
+        e.preventDefault();
+    });
+    window.addEventListener('mouseup', () => {
+        isDragging = false;
+    });
+    window.addEventListener('mousemove', (e) => {
+        if (!isDragging) return;
+        e.preventDefault();
+        const x = e.pageX - scroller.offsetLeft;
+        const walk = (x - startX) * 1.5;
+        scroller.scrollLeft = scrollLeft - walk;
+    });
+
+    function autoScroll() {
+        if (!isHovered && !isDragging) {
+            scroller.scrollLeft += 1;
+        }
+        
+        if (scroller.scrollLeft >= singleSetWidth * 2) {
+            scroller.scrollLeft -= singleSetWidth;
+        } else if (scroller.scrollLeft <= singleSetWidth * 0.5) {
+            scroller.scrollLeft += singleSetWidth;
+        }
+        
+        requestAnimationFrame(autoScroll);
+    }
+    autoScroll();
+}
+
+// Initialize Application
+document.addEventListener('DOMContentLoaded', function() {
+    initTheme();
+    renderDynamicContent();
+    loadPosters();
+    setupHorizontalScroll();
+    type();
+    syncLinkedInDP();
+
+    if (window.lucide) {
+        lucide.createIcons();
+    }
+
+    // Attach theme toggle button listeners
+    const themeToggleBtns = document.querySelectorAll('.theme-toggle-btn');
+    themeToggleBtns.forEach(btn => {
+        btn.addEventListener('click', toggleTheme);
+    });
+
+    // Start Live Clock
+    updateLiveStatus();
+    setInterval(updateLiveStatus, 1000);
+
+    // Mobile Menu Stagger
+    const mobileLinks = document.querySelectorAll('#mobile-nav a');
+    mobileLinks.forEach(function(link, i) {
+        link.style.transitionDelay = (i * 100) + 'ms';
+    });
+
+    // ScrollReveal
+    if (window.ScrollReveal) {
+        ScrollReveal().reveal('.reveal', {
+            delay: 150,
+            distance: '40px',
+            origin: 'bottom',
+            duration: 800,
+            interval: 80
+        });
+        ScrollReveal().reveal('h2', { delay: 100, distance: '60px', origin: 'left', duration: 900 });
+    }
+});
