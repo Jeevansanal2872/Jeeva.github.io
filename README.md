@@ -2,13 +2,33 @@
 
 > UI/UX Designer & Creative Developer
 
-Portfolio showcasing design work, poster gallery, and projects.
+Personal portfolio website with neo-brutalist design aesthetic.
 
-## Stack
+## Features
+- Dark / Light mode with system preference detection
+- Typewriter text animation for roles
+- Horizontal scroll project showcase
+- Infinite auto-scroll poster gallery with drag
+- LinkedIn profile card with live DP sync
+- Responsive mobile-first layout
+- ScrollReveal scroll animations
+- Live UTC clock in footer
+
+## Tech Stack
 - HTML5 / CSS3 / JavaScript
-- Tailwind CSS
-- ScrollReveal.js
+- Tailwind CSS (CDN)
 - Lucide Icons
+- ScrollReveal.js
+- Google Fonts (Inter, IBM Plex Mono)
 
-## Status
-Under Development
+## Structure
+- index.html - Main page
+- styles.css - Custom styles and design system
+- app.js - Core logic and rendering
+- Assets/ - Logo and profile photo
+- posters/ - Poster gallery images (20+)
+
+## Contact
+- Email: jeevan9846s@gmail.com
+- LinkedIn: linkedin.com/in/jeevansanal2872
+- GitHub: github.com/Jeevansanal2872
