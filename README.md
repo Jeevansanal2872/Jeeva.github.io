@@ -32,3 +32,6 @@ Personal portfolio website with neo-brutalist design aesthetic.
 - Email: jeevan9846s@gmail.com
 - LinkedIn: linkedin.com/in/jeevansanal2872
 - GitHub: github.com/Jeevansanal2872
+---
+
+Deployed via GitHub Pages.
