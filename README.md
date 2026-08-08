@@ -2,16 +2,16 @@
 
 > UI/UX Designer & Creative Developer
 
-Personal portfolio website with neo-brutalist design aesthetic.
+Neo-brutalist portfolio website showcasing my design work, poster gallery, and technical projects.
 
 ## Features
-- Dark / Light mode with system preference detection
-- Typewriter text animation for roles
+- Dark / Light mode toggle with system preference detection
+- Typewriter text animation cycling through roles
 - Horizontal scroll project showcase
-- Infinite auto-scroll poster gallery with drag
-- LinkedIn profile card with live DP sync
-- Responsive mobile-first layout
-- ScrollReveal scroll animations
+- Infinite auto-scroll poster gallery with drag support
+- LinkedIn profile card integration with live DP sync
+- Fully responsive mobile-first layout
+- ScrollReveal scroll-triggered animations
 - Live UTC clock in footer
 
 ## Tech Stack
@@ -22,16 +22,21 @@ Personal portfolio website with neo-brutalist design aesthetic.
 - Google Fonts (Inter, IBM Plex Mono)
 
 ## Structure
-- index.html - Main page
-- styles.css - Custom styles and design system
-- app.js - Core logic and rendering
-- Assets/ - Logo and profile photo
-- posters/ - Poster gallery images (20+)
+`
+â”œâ”€â”€ index.html          # Main page
+â”œâ”€â”€ styles.css          # Custom styles & design system
+â”œâ”€â”€ app.js              # Core logic & rendering
+â”œâ”€â”€ Assets/             # Logo, profile photo
+â”œâ”€â”€ posters/            # Poster gallery images
+â”œâ”€â”€ CNAME               # Custom domain config
+â””â”€â”€ linkedin.html       # LinkedIn redirect
+`
 
 ## Contact
 - Email: jeevan9846s@gmail.com
-- LinkedIn: linkedin.com/in/jeevansanal2872
-- GitHub: github.com/Jeevansanal2872
+- LinkedIn: [jeevansanal2872](https://linkedin.com/in/jeevansanal2872)
+- GitHub: [Jeevansanal2872](https://github.com/Jeevansanal2872)
+
 ---
 
-Deployed via GitHub Pages.
+Designed & Crafted with Purpose. v1.0
