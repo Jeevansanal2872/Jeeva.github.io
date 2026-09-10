@@ -1,8 +1,8 @@
 // Data Provider
 const DATA = {
     roles: [
-        "Graphic Designer @ IEEE SC COS 2026",
-        "Graphic Designer @ IEEE SPS KC",
+        "Graphic Designer @ IEEE Smart City COS 2026",
+        "Graphic Designer @ IEEE SPS Kerala Chapter",
         "Deputy CFA @ FOSS CEAL",
         "CREATE101 Lead @ CEAL",
         "Webmaster @ IEEE SBC SB CEAL",
@@ -40,14 +40,14 @@ const DATA = {
     ],
     experience: [
         {
-            title: "Graphic Designer @ IEEE SC COS 2026",
+            title: "Graphic Designer @ IEEE Smart City COS 2026",
             date: "2025 - Present",
             desc: "Leading creative initiatives, event branding, and visual design for IEEE SC COS 2026.",
             icon: "palette",
             link: "#"
         },
         {
-            title: "Graphic Designer @ IEEE SPS KC",
+            title: "Graphic Designer @ IEEE SPS Kerala Chapter",
             date: "2024 - Present",
             desc: "Leading visual design, marketing aesthetics, and digital branding campaigns for the IEEE Signal Processing Society Kerala Chapter.",
             icon: "brush",
@@ -86,7 +86,7 @@ const DATA = {
         "posters/1.png", "posters/2.png", "posters/3.png", "posters/4.png",
         "posters/5.png", "posters/6.png", "posters/7.png", "posters/8.png",
         "posters/9.png", "posters/10.png", "posters/11.png", "posters/12.png",
-        "posters/13.png", "posters/14.png", "posters/15.jpeg", "posters/16.png",
+        "posters/13.png", "posters/14.png", "posters/15.png", "posters/16.png",
         "posters/17.png", "posters/18.png", "posters/19.png", "posters/20.png"
     ]
 };
