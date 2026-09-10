@@ -1,6 +1,7 @@
 // Data Provider
 const DATA = {
     roles: [
+        "Graphic Designer @ IEEE SC COS 2026",
         "Graphic Designer @ IEEE SPS KC",
         "Deputy CFA @ FOSS CEAL",
         "CREATE101 Lead @ CEAL",
@@ -39,11 +40,18 @@ const DATA = {
     ],
     experience: [
         {
+            title: "Graphic Designer @ IEEE SC COS 2026",
+            date: "2025 - Present",
+            desc: "Leading creative initiatives, event branding, and visual design for IEEE SC COS 2026.",
+            icon: "palette",
+            link: "#"
+        },
+        {
             title: "Graphic Designer @ IEEE SPS KC",
             date: "2024 - Present",
             desc: "Leading visual design, marketing aesthetics, and digital branding campaigns for the IEEE Signal Processing Society Kerala Chapter.",
             icon: "brush",
-            link: "#"
+            link: "https://www.ieeespskc.in/team"
         },
         {
             title: "Deputy CFA @ FOSS CEAL",
